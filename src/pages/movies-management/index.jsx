@@ -11,17 +11,17 @@ const[ form] = useForm()
     const [isOpen , setisOpen] = useState(false)
     const [dataSource , setDataSource] = useState([])
     const columns = [{
-        title : 'Pet Name',
+        title : ' Name',
         dataIndex : 'name',
         key: 'name'
       },
       {
-        title : "pet Age",
-        dataIndex : 'age',
-        key :'age'
+        title : "categary",
+        dataIndex : 'category',
+        key :'category'
       },
       {
-        title : 'Pet Poster',
+        title : ' Poster',
         dataIndex : 'poster_path',
         key: 'poster_path',
         render : (poster_path) => (<Image src= {poster_path} width={50}/>)}
@@ -100,7 +100,7 @@ handlehideModal()
   return (
     
     <div>
-        <Button onClick={handleshowModal} >Add New Pet</Button>
+        <Button onClick={handleshowModal} >Add New </Button>
         <Table dataSource={dataSource} columns={columns} />
         <Modal open={isOpen} title="add pet" onCancel={handlehideModal} onOk={handleOK}>
             <Form form={form} onFinish={handleSubmit}
